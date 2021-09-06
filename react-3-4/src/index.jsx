@@ -6,9 +6,8 @@ import Greeting from "./Greeting";
 const rootElement = document.querySelector('#root');
 
 
-
 ReactDOM.render(<Greeting
   firstName="John"
   lastName="Doe"
-  birthDate={'1986-01-06'}
+  birthDate={new Date('2021-01-06')}
 />, rootElement)
