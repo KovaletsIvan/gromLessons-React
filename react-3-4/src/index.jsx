@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Griting from "./Greeting";
+import Greeting from "./Greeting";
 
 const rootElement = document.querySelector('#root');
 
 
 
-ReactDOM.render(<Griting
+ReactDOM.render(<Greeting
   firstName="John"
   lastName="Doe"
   birthDate={'1986-01-06'}
