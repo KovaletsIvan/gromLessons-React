@@ -11,7 +11,7 @@ const Profile = (props) => {
         {props.userData.firstName} {props.userData.lastName}
       </div>
       <div className="profile__birth">
-        Was born {date(props.userData.birthDate)} in {props.userData.birthPlace}
+       { `Was born ${date(props.userData.birthDate)} in ${props.userData.birthPlace}`}
       </div>
     </div>
   )
