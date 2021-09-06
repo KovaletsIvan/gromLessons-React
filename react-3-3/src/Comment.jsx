@@ -11,9 +11,9 @@ function Comment(props) {
   return (
     <div className="comment">
       <UserInfo user={props.user} />
-      <div className="comment__author" author = {props.author} >{props.author}</div>
-      <div className="comment__text" text={props.text}>{props.text}</div>
-      <div className="comment__date" data={formatDate(props.date)}>{formatDate(props.date)}</div>
+      <div className="comment__author" author = {props.user.author} >{props.author}</div>
+      <div className="comment__text" text={props.user.text}>{props.text}</div>
+      <div className="comment__date" data={formatDate(props.user.date)}>{formatDate(props.date)}</div>
     </div>
   );
 }
