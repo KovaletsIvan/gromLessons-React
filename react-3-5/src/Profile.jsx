@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import "./index.scss"
 
 const date = (birthDate) => moment(birthDate).format("D MMM YY")
 
