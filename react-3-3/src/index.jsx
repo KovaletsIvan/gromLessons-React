@@ -8,16 +8,15 @@ const rootElement = document.querySelector('#root');
 
 const userInfo = {
   name: 'Tom',
-  avatarUrl: 'https://cdn.icon-icons.com/icons2/2406/PNG/512/github_git_icon_145985.png'
-}
-
-const author = {
+  avatarUrl: 'https://cdn.icon-icons.com/icons2/2406/PNG/512/github_git_icon_145985.png',
+  authot: '',
   text: 'Goog job!',
   date: new Date()
 }
 
+
+
 ReactDOM.render(<Comment
   user={userInfo}
-  authorData={author}
 
 />, rootElement)
