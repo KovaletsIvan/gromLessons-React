@@ -11,13 +11,13 @@ const userInfo = {
   avatarUrl: 'https://cdn.icon-icons.com/icons2/2406/PNG/512/github_git_icon_145985.png'
 }
 
-const authorData = {
+const author = {
   text: 'Goog job!',
   date: new Date()
 }
 
 ReactDOM.render(<Comment
   user={userInfo}
-  author = {authorData}
+  authorData={author}
 
 />, rootElement)
