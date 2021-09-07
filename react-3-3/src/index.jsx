@@ -10,13 +10,10 @@ const userInfo = {
   name: 'Tom',
   avatarUrl: 'https://cdn.icon-icons.com/icons2/2406/PNG/512/github_git_icon_145985.png'
 }
-const authorInfo = {
-  text: "Good job!",
-  date: new Date('1986-02-06'),
-};
+
 
 
 ReactDOM.render(<Comment
   user={userInfo}
-  author={authorInfo}
+  author={{ text: "Good job!", date: new Date('1986-02-06')}}
 />, rootElement)
