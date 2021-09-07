@@ -12,7 +12,7 @@ const userInfo = {
 }
 const authorInfo = {
   text: 'Good job!',
-  date: '1986-02-06'
+  date: new Date('1986-02-06')
 };
 
 
