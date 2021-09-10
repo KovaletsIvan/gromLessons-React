@@ -1,7 +1,5 @@
 import React from "react";
 
-const buttonElem = document.querySelector(".toggler")
-
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
