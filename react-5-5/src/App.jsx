@@ -3,7 +3,7 @@ import Toggler from './Toggler';
 
 const App = () => {
   return (
-    <Toggler text = 'Off'/>
+    <Toggler />
   )
 }
 
