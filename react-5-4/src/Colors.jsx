@@ -1,6 +1,8 @@
 import React from "react";
 
-
+const RED = '#f00';
+const GREEN = '#0f0';
+const BLUE = '#00f'
 
 class Colors extends React.Component {
 
@@ -11,17 +13,17 @@ class Colors extends React.Component {
   render() {
     return <div className="colors">
       <button className="colors__button"
-        style={{ backgroundColor: 'red' }}
-        onClick={() => { this.setBodyColor('red') }}
+        style={{ backgroundColor: RED }}
+        onClick={() => { this.setBodyColor(RED) }}
       >
       </button>
       <button className="colors__button"
-        style={{ backgroundColor: 'green' }}
-        onClick={() => { this.setBodyColor('green') }}
+        style={{ backgroundColor: GREEN }}
+        onClick={() => { this.setBodyColor(GREEN) }}
       ></button>
       <button className="colors__button"
-        style={{ backgroundColor: 'blue' }}
-        onClick={() => { this.setBodyColor('blue') }}
+        style={{ backgroundColor: BLUE }}
+        onClick={() => { this.setBodyColor(BLUE) }}
       ></button>
     </div>
   }
