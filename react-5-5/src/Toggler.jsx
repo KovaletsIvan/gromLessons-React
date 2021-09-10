@@ -15,8 +15,8 @@ class Toggler extends React.Component {
   }
   render() {
     return <button className="toggler"
-      onClick={(e) => this.toggleContent(e)}
-     >{this.state.text}</button>
+      onClick={this.toggleContent.bind(this)}
+    >{this.state.text}</button>
   }
 }
 
