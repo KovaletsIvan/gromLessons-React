@@ -4,13 +4,13 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'On'
+      text: 'Off'
     }
   }
   toggleValue(e) {
     const event = e.target.textContent;
     this.setState({
-      text: event === 'On' ? 'Of' : 'On'
+      text: event === 'Off' ? 'On' : 'Off'
     })
   }
   render() {
