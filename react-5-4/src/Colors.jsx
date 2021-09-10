@@ -9,7 +9,7 @@ class Colors extends React.Component {
   }
 
   render() {
-    return <>
+    return <div className="colors">
       <button className="colors__button"
         style={{ backgroundColor: 'red' }}
         onClick={() => { this.setBodyColor('red') }}
@@ -23,7 +23,7 @@ class Colors extends React.Component {
         style={{ backgroundColor: 'blue' }}
         onClick={() => { this.setBodyColor('blue') }}
       ></button>
-    </>
+    </div>
   }
 
 }
