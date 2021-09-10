@@ -8,9 +8,6 @@ class Toggler extends React.Component {
     }
   }
   toggleContent(e) {
-    if (!(e.target).classList.contains('toggler')) {
-      return
-    }
     const event = e.target.textContent;
     this.setState({
       text: event === 'Off' ? 'On' : 'Off'
