@@ -38,7 +38,7 @@ class ColorPicker extends React.Component {
           ></button>
           <button
             className="picker__button picker__button_bisque"
-            name="Bosquit"
+            name="Bisque"
             onMouseOver={this.toggleColors.bind(this)}
             onMouseOut={this.clear.bind(this)}
           ></button>
