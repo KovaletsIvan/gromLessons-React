@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Login = (props) => {
-
+const Login = (onLogin) => {
   return (
-    <button className="btn login" onClick={props.onClick}>Login</button>
+    <button className="btn login" onClick={onLogin.onClick}>Login</button>
   )
 }
 
