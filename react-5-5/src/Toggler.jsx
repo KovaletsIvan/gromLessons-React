@@ -4,19 +4,18 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Off'
+      active: false
     }
   }
-  toggleContent(e) {
-    const event = e.target.textContent;
+  toggleContent() {
     this.setState({
-      text: event === 'Off' ? 'On' : 'Off'
+      active: this.state.active === false ? true : false
     })
   }
   render() {
     return <button className="toggler"
-      onClick={this.toggleContent.bind(this)}
-    >{this.state.text}</button>
+      onClick={() => this.toggleContent()}
+    >{this.state.active ? 'On' : 'Off'}</button>
   }
 }
 
