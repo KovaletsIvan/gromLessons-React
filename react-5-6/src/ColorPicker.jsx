@@ -1,46 +1,47 @@
 import React from 'react';
 
+const CORAL = 'Coral';
+const AQUA = 'Aqua';
+const BISQUE = 'Biscque';
+
 class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: '',
+      colorName: '',
     };
   }
-  toggleColors(e) {
-    const event = e.target.name;
+  toggleColors = (color) => {
     this.setState({
-      color: event,
+      colorName: color,
     });
 
   }
-  clear() {
+  clear = () => {
     this.setState({
-      color: ''
+      colorName: ''
     })
   }
   render() {
     return (
       <div>
-        <div className="picker__title">{this.state.color}</div>
+        <div className="picker__title">{this.state.colorName}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
-            name="Coral"
-            onMouseOver={this.toggleColors.bind(this)}
-            onMouseOut={this.clear.bind(this)}
+            Coral
+            onMouseOver={() => this.toggleColors(CORAL)}
+            onMouseOut={() => this.clear()}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            name="Aqua"
-            onMouseOver={this.toggleColors.bind(this)}
-            onMouseOut={this.clear.bind(this)}
+            onMouseOver={() => this.toggleColors(AQUA)}
+            onMouseOut={() => this.clear()}
           ></button>
           <button
             className="picker__button picker__button_bisque"
-            name="Bisque"
-            onMouseOver={this.toggleColors.bind(this)}
-            onMouseOut={this.clear.bind(this)}
+            onMouseOver={() => this.toggleColors(BISQUE)}
+            onMouseOut={() => this.clear()}
           ></button>
         </div>
       </div>
