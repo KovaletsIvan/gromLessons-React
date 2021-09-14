@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './index.scss';
-import Auth from './Auth';
+import App from './App';
 
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<Auth />, rootElement)
+ReactDOM.render(<App />, rootElement)
