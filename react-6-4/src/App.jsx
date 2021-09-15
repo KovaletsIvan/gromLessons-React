@@ -5,7 +5,7 @@ import Status from './Status';
 
 const App = () => {
   return (
-    <Status status='true'/>
+    <Status isOnline={true} />
   )
 }
 
