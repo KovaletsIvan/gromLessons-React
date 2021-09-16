@@ -2,7 +2,7 @@ import React from "react";
 
 const Spinner = (props) => {
   return (
-    <div className="spinner disp" style={{ height: props.size }}></div>
+    <span className="spinner" style={{ height: props.size }}></span>
   )
 }
 export default Spinner

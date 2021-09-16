@@ -3,27 +3,25 @@ import Login from './Login';
 import Logout from './Logout';
 import Spinner from './Spinner'
 
-
-
 class Auth extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      status: false
+      status: false,
+      spin: false
     }
   }
   onLogin = () => {
-    const loginBtn = document.querySelector('.login')
-    const spinnerElement = document.querySelector('.spinner')
-    loginBtn.classList.add('disp')
-    spinnerElement.classList.remove('disp')
-
+    this.setState({
+      spin: true,
+    });
     setTimeout(() => {
-      spinnerElement.classList.add('disp')
       this.setState({
+        spin: false,
         status: true
       })
     }, 2000)
+
   }
 
   onLogout = () => {
@@ -34,13 +32,19 @@ class Auth extends React.Component {
 
   render() {
     let btn;
-    this.state.status ?
-      btn = <Logout onLogout={this.onLogout} /> :
-      btn = <Login onLogin={this.onLogin} />
+    let spiner;
+
+    this.state.spin ?
+      spiner = <Spinner size={20} /> :
+      spiner = <Login onLogin={this.onLogin} />
+    if (this.state.status) {
+      btn = <Logout onLogout={this.onLogout} />
+      spiner = null
+    }
 
     return (
-      <>
-        <Spinner size={20} />  {btn}
+      <>{btn}
+        {spiner}
       </>
     )
   }
