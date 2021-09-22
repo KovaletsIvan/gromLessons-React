@@ -3,29 +3,44 @@ import Pagination from './Pagination';
 import User from './User';
 
 
-
 class UsersList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      curentPage: 1
+      curentPage: 1,
     }
   }
   changePage = () => {
+    let result;
+    if (this.state.curentPage === 1) {
+      result = (this.props.users.slice(0, 3).map(action => <User key={action.id} {...action} />))
+    }
 
+    if (this.state.curentPage === 2) {
+      result = (this.props.users.slice(3, 6).map(action => <User key={action.id} {...action} />))
+    }
+    return result;
   }
 
+  numPages=()=>{
+    return this.props.users.length / itemsPerPage
+  }
 
   goPrev = () => {
-    if (current_page > 1) {
-      current_page--;
-      changePage(current_page);
+    if (this.state.curentPage > 1) {
+      this.setState({
+        curentPage: this.curentPage - 1
+      })
+
+      this.changePage();
     }
   }
   goNext = () => {
-    if (current_page < numPages()) {
-      current_page++;
-      changePage(current_page);
+    if (this.state.curentPage < numPages()) {
+      this.setState({
+        curentPage: this.state.curentPage + 1
+      })
+      this.changePage();
     }
   }
   render() {
@@ -39,7 +54,7 @@ class UsersList extends React.Component {
           goNext={this.goNext}
         />
         <ul className="users">
-          {this.props.users.slice().map(action => <User key={action.id} {...action} />)}
+          {this.changePage()}
         </ul>
       </div>
 
