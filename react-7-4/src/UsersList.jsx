@@ -8,13 +8,15 @@ class UsersList extends React.Component {
     super(props)
     this.state = {
       currentPage: 1,
-      splittedArr: this.divided
+      itemsPerPage: 3,
+      splittedArr: this.divided,
+
     }
   }
   divided = () => {
     const arr = [0];
-    for (let i = 0; i < this.props.users.length; i = i + 3) {
-      arr.push(this.props.users.slice(i, i + 3))
+    for (let i = 0; i < this.props.users.length; i = i + this.state.itemsPerPage) {
+      arr.push(this.props.users.slice(i, i + this.state.itemsPerPage))
     }
     return arr
   }
@@ -34,7 +36,7 @@ class UsersList extends React.Component {
     return (
       <div>
         <Pagination
-          itemsPerPage={3}
+          itemsPerPage={this.state.itemsPerPage}
           curentPage={this.state.currentPage}
           totalItems={this.props.users.length}
           goPrev={this.goPrev}
