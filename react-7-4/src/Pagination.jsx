@@ -5,6 +5,9 @@ const Pagination = (props) => {
   const amountPages = Math.ceil(props.totalItems / props.itemsPerPage)
   let isPrivPageAvailable = props.curentPage - 1 > 0 ? true : false;
   let isNextPageAvailable = (amountPages - props.curentPage) > 0 ? true : false;
+
+  
+
   return (
 
     <>

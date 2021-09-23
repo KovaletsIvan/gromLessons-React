@@ -7,7 +7,7 @@ class UsersList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      curentPage: 1,
+      currentPage: 1,
       splittedArr: this.divided
     }
   }
@@ -21,12 +21,12 @@ class UsersList extends React.Component {
 
   goPrev = () => {
     this.setState({
-      curentPage: this.state.curentPage - 1
+      currentPage: this.state.currentPage - 1
     })
   }
   goNext = () => {
     this.setState({
-      curentPage: this.state.curentPage + 1
+      currentPage: this.state.currentPage + 1
     })
   }
   render() {
@@ -35,13 +35,13 @@ class UsersList extends React.Component {
       <div>
         <Pagination
           itemsPerPage={3}
-          curentPage={this.state.curentPage}
+          curentPage={this.state.currentPage}
           totalItems={this.props.users.length}
           goPrev={this.goPrev}
           goNext={this.goNext}
         />
         <ul className="users">
-          {this.state.splittedArr()[this.state.curentPage].slice().map(action => <User key={action.id} {...action} />)}
+          {this.state.splittedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
         </ul>
       </div>
 
