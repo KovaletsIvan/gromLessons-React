@@ -6,26 +6,24 @@ const Pagination = (props) => {
   let isPrivPageAvailable = props.curentPage - 1 > 0 ? true : false;
   let isNextPageAvailable = (amountPages - props.curentPage) > 0 ? true : false;
 
-  
+
 
   return (
 
-    <>
-      <div className="pagination">
-        <button className="btn" onClick={props.goPrev} 
+    <div className="pagination">
+      <button className="btn" onClick={props.goPrev}
         disabled={!isPrivPageAvailable}>
-          {isPrivPageAvailable ? '←' : null}
-          </button>
+        {isPrivPageAvailable ? '←' : null}
+      </button>
 
-        <span className="pagination__page" >{props.curentPage}</span>
-        
-        <button className="btn" onClick={props.goNext}
+      <span className="pagination__page" >{props.curentPage}</span>
+
+      <button className="btn" onClick={props.goNext}
         disabled={!isNextPageAvailable}>
-          {isNextPageAvailable ? '→' : null}
-          </button>
-      </div>
+        {isNextPageAvailable ? '→' : null}
+      </button>
+    </div>
 
-    </>
   )
 
 };
