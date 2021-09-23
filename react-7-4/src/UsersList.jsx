@@ -9,11 +9,9 @@ class UsersList extends React.Component {
     this.state = {
       currentPage: 1,
       itemsPerPage: 3,
-      splitedArr: this.divided,
-
     }
   }
-  divided = () => {
+  dividedArr = () => {
     const arr = [null];
     for (let i = 0; i < this.props.users.length; i = i + this.state.itemsPerPage) {
       arr.push(this.props.users.slice(i, i + this.state.itemsPerPage))
@@ -43,7 +41,7 @@ class UsersList extends React.Component {
           goNext={this.goNext}
         />
         <ul className="users">
-          {this.state.splitedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
+          {this.dividedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
         </ul>
       </div>
 
