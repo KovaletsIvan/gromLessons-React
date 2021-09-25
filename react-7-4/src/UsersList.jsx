@@ -30,7 +30,7 @@ class UsersList extends React.Component {
     })
   }
   render() {
-
+    let valueOfCuretPage = this.dividedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)
     return (
       <div>
         <Pagination
@@ -41,7 +41,7 @@ class UsersList extends React.Component {
           goNext={this.goNext}
         />
         <ul className="users">
-          {this.dividedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
+          {valueOfCuretPage}
         </ul>
       </div>
 
