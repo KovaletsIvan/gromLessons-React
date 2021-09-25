@@ -11,13 +11,6 @@ class UsersList extends React.Component {
       itemsPerPage: 3,
     }
   }
-  dividedArr = () => {
-    const arr = [null];
-    for (let i = 0; i < this.props.users.length; i = i + this.state.itemsPerPage) {
-      arr.push(this.props.users.slice(i, i + this.state.itemsPerPage))
-    }
-    return arr
-  }
 
   goPrev = () => {
     this.setState({
@@ -31,6 +24,13 @@ class UsersList extends React.Component {
   }
   render() {
 
+    const dividedArr = () => {
+      const arr = [null];
+      for (let i = 0; i < this.props.users.length; i = i + this.state.itemsPerPage) {
+        arr.push(this.props.users.slice(i, i + this.state.itemsPerPage))
+      }
+      return arr
+    }
     return (
       <div>
         <Pagination
@@ -41,7 +41,7 @@ class UsersList extends React.Component {
           goNext={this.goNext}
         />
         <ul className="users">
-          {this.dividedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
+          {dividedArr()[this.state.currentPage].slice().map(action => <User key={action.id} {...action} />)}
         </ul>
       </div>
 
