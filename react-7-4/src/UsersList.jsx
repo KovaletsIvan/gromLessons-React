@@ -26,7 +26,7 @@ class UsersList extends React.Component {
 
     const dividedArr = () => {
       const arr = [null];
-      for (let i = 0; i < this.props.users.length; i = i + this.state.itemsPerPage) {
+      for (let i = 1; i < this.props.users.length; i = i + this.state.itemsPerPage) {
         arr.push(this.props.users.slice(i, i + this.state.itemsPerPage))
       }
       return arr
