@@ -16,21 +16,21 @@ class UsersList extends React.Component {
 
   goPrev = () => {
     this.setState({
+      step: this.state.step - this.state.itemsPerPage,
       currentPage: this.state.currentPage - 1,
-      step: this.state.step + this.state.itemsPerPage
     })
   }
   goNext = () => {
     this.setState({
+      step: this.state.step + this.state.itemsPerPage,
       currentPage: this.state.currentPage + 1,
-      step: this.state.step + this.state.itemsPerPage
     })
   }
   render() {
     let divArr = this.state.currentPage === 1 ?
       this.props.users.slice(0, this.state.itemsPerPage) :
       this.props.users.slice(this.state.step, this.state.itemsPerPage * this.state.currentPage);
-
+   
     return (
 
       <div>
