@@ -4,8 +4,8 @@ import React from 'react';
 const Pagination = (props) => {
 
   const amountPages = Math.ceil(props.totalItems / props.itemsPerPage)
-  let isPrivPageAvailable = props.curentPage - 1 > 0 ? true : false;
-  let isNextPageAvailable = (amountPages - props.curentPage) > 0 ? true : false;
+  let isPrivPageAvailable = props.currentPage - 1 > 0 ? true : false;
+  let isNextPageAvailable = (amountPages - props.currentPage) > 0 ? true : false;
 
 
   return (
@@ -16,7 +16,7 @@ const Pagination = (props) => {
         {isPrivPageAvailable ? '←' : null}
       </button>
 
-      <span className="pagination__page" >{props.curentPage}</span>
+      <span className="pagination__page" >{props.currentPage}</span>
 
       <button className="btn" onClick={props.goNext}
         disabled={!isNextPageAvailable}>
