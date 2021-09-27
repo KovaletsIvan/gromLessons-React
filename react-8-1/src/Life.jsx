@@ -19,7 +19,7 @@ class Life extends React.Component {
 
   shouldComponentUpdate(nexProps, nextState) {
     console.log('shouldComponentUpdate(nexProps, nextState):decide to render or not to render')
-    return nextState.num % 2
+    return nextState
   }
 
   componentDidUpdate(prevProps, prevState) {
