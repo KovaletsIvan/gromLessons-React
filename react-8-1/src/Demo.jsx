@@ -12,12 +12,12 @@ class Demo extends React.Component {
 
   show = () => {
     this.setState({
-      visible: this.state.visible || true
+      visible: this.state.visible || true 
     })
   }
   hide = () => {
     this.setState({
-      visible: this.state.visible ? false : null
+      visible: false
     })
   }
   apdate = () => {
