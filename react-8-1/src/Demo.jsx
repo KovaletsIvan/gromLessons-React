@@ -6,7 +6,7 @@ class Demo extends React.Component {
     super(props)
     this.state = {
       number: 0,
-      visible: false
+      visible: true
     }
   }
 
