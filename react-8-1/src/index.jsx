@@ -7,4 +7,4 @@ import './index.scss';
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<Life/>, rootElement)
+ReactDOM.render(<Life num={1}/>, rootElement)
