@@ -24,7 +24,7 @@ class Life extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount():cleanup before DOM related to component will be remowed')
+    console.log('componentWillUnmount():cleanup before DOM related to component will be removed')
   }
 
   render() {
