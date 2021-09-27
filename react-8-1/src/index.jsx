@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Life from './Life'
+import Demo from './Demo'
 import './index.scss';
 
 
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<Life num={1}/>, rootElement)
+ReactDOM.render(<Demo />, rootElement)
