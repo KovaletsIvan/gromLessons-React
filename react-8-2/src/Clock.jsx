@@ -1,7 +1,6 @@
 
 import React from 'react';
 
-
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -22,8 +21,10 @@ class Clock extends React.Component {
 
   render() {
 
-    let time = this.state.date.setHours(20)
-    let newTime = new Date(time).setHours(this.props.offset)
+    let timeUTS =
+      new Date(new Date().setHours(new Date().getUTCHours()))
+    let x = new Date(timeUTS.setHours(timeUTS.getHours() + this.props.offset))
+
     return (
 
       <div className="clock">
@@ -31,7 +32,7 @@ class Clock extends React.Component {
           {this.props.location}
         </div>
         <div className="clock__time">
-          {new Date(newTime).toLocaleTimeString()}
+          {x.toLocaleTimeString()}
         </div>
       </div>
 
