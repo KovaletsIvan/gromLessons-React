@@ -21,9 +21,8 @@ class Clock extends React.Component {
   }
 
   render() {
-    const HOUERS_DIFERENCE = 2
-    const LONDON_TIME = new Date().getHours() - HOUERS_DIFERENCE;
-    let time = this.state.date.setHours(LONDON_TIME + this.props.offset)
+    
+    let time = this.state.date.setHours(this.props.offset)
 
     return (
 
