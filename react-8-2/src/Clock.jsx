@@ -21,9 +21,9 @@ class Clock extends React.Component {
   }
 
   render() {
-    
-    let time = this.state.date.setHours(this.props.offset)
 
+    let time = this.state.date.setHours(20)
+    let newTime = new Date(time).setHours(this.props.offset)
     return (
 
       <div className="clock">
@@ -31,7 +31,7 @@ class Clock extends React.Component {
           {this.props.location}
         </div>
         <div className="clock__time">
-          {new Date(time).toLocaleTimeString()}
+          {new Date(newTime).toLocaleTimeString()}
         </div>
       </div>
 
