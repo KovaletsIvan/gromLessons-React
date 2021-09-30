@@ -11,25 +11,21 @@ class ConnectionStatus extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('offline', this.setStatusOffline)
     window.addEventListener('online', this.setStatusOnline)
+    window.addEventListener('offline', this.setStatusOffline)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('offline', this.setStatusOffline)
     window.removeEventListener('online', this.setStatusOnline)
+    window.removeEventListener('offline', this.setStatusOffline)
   }
   setStatusOffline = () => {
-    const divElem = document.querySelector(".status")
-    divElem.classList.add('status_offline')
     this.setState({
       online: false
     })
   }
 
   setStatusOnline = () => {
-    const divElem = document.querySelector(".status")
-    divElem.classList.remove('status_offline')
     this.setState({
       online: true
     })
@@ -39,9 +35,9 @@ class ConnectionStatus extends React.Component {
   render() {
 
     let statusResult = this.state.online ? "online" : "offline"
-
+    let ostatusClass = statusResult === 'offline' ? 'status_offline' : null
     return (
-      <div className="status">{statusResult}</div>
+      <div className="status" className={ostatusClass}>{statusResult}</div>
     )
   }
 }
