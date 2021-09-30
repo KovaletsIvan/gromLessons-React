@@ -4,7 +4,7 @@ import User from "./User";
 
 const App = () => {
 
-  return (<User userId="facebook"/>)
+  return (<User userId="github"/>)
 }
 
 
