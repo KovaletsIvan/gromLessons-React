@@ -19,16 +19,16 @@ class Search extends React.Component {
     alert(`Search text: ${this.state.text}`)
   }
 
-  listenInpat=(e)=>{
+  listenInput = (e) => {
     this.setState({
-     text: e.target.value 
+      text: e.target.value
     })
   }
   render() {
 
     return (
-      <form className="search">
-        <input type="text" className="search__input" onChange={this.listenInpat}/>
+      <form className="search" onChange={this.listenInput}>
+        <input type="text" className="search__input" value={this.state.text} />
         <button className="search__button" onClick={this.clickHendle}>Search</button>
       </form>
     )
