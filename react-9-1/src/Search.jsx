@@ -15,7 +15,7 @@ class Search extends React.Component {
   }
 
   clickHendle = (e) => {
-    e.persist()
+    e.preventDefault()
     alert(`Search text: ${this.state.text}`)
   }
 
