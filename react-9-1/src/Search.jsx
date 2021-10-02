@@ -15,7 +15,7 @@ class Search extends React.Component {
   }
 
   clickHendle = (e) => {
-    e.preventDefault()
+    e.persist()
     alert(`Search text: ${this.state.text}`)
   }
 
@@ -27,9 +27,9 @@ class Search extends React.Component {
   render() {
 
     return (
-      <form className="search" onChange={this.listenInput}>
-        <input type="text" className="search__input" value={this.state.text} />
-        <button className="search__button" onClick={this.clickHendle}>Search</button>
+      <form className="search" onSubmit={this.clickHendle}>
+        <input type="text" className="search__input" onChange={this.listenInput} value={this.state.text} />
+        <button className="search__button" type="submit">Search</button>
       </form>
     )
   }
