@@ -20,15 +20,15 @@ class UserForm extends React.Component {
       [name]: val
     })
   }
-  // createUser = (e) => {
-  //   e.preventDefault()
-  //   console.log(this.state)
-  // }
+  createUser = (e) => {
+    e.preventDefault()
+    console.log(this.state)
+  }
 
   render() {
 
     return (
-      <form className="login-form" onSubmit={(e) => this.props.createUser(e, this.state)}>
+      <form className="login-form" onSubmit={ this.createUser}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">Name</label>
