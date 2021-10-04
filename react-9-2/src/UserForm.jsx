@@ -6,29 +6,29 @@ class UserForm extends React.Component {
     super(props)
     this.state = {
       name: '',
-      student: '',
-      occupation: '',
+      student: false,
+      occupation: 'london',
       about: ''
     }
 
   }
 
   handleChange = (e) => {
-    const name = e.target.name
-    const val = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    const { name, value, type, checked } = e.target
+    const val = type === 'checkbox' ? checked : value
     this.setState({
       [name]: val
     })
   }
-  createUser = (e) => {
-    e.preventDefault()
-    console.log(this.state)
-  }
+  // createUser = (e) => {
+  //   e.preventDefault()
+  //   console.log(this.state)
+  // }
 
   render() {
 
     return (
-      <form className="login-form" onSubmit={this.createUser}>
+      <form className="login-form" onSubmit={(e) => this.props.createUser(e, this.state)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">Name</label>
