@@ -23,7 +23,7 @@ class UserForm extends React.Component {
 
   hendleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state)
+    this.props.createUser(this.state)
   }
 
   render() {
