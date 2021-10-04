@@ -11,7 +11,9 @@ class UserForm extends React.Component {
 
   hendleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.formRef)
+    const formData = [...new FormData(this.formRef)]
+      .reduce((acc, [name, value]) => ({ ...acc, [name]: value }), {});
+    this.props.onSubmit(formData)
   }
 
   render() {

@@ -7,11 +7,9 @@ class App extends React.Component {
     super(props)
   }
 
-  createUser = (obj) => {
-    const formData = [...new FormData(obj)]
-      .reduce((acc, [name, value]) => ({ ...acc, [name]: value }), {})
-    console.log(formData)
-  }
+  createUser = (obj) =>
+    console.log(obj)
+
 
   render() {
     return (<UserForm onSubmit={this.createUser} />)
