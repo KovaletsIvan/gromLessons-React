@@ -5,21 +5,19 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props)
   }
-
+  setRef = (node) => {
+    this.formRef = node
+  }
 
   hendleSubmit = (e) => {
     e.preventDefault();
     this.props.onSubmit(this.formRef)
   }
 
-  setRef = (node) => {
-    this.formRef = node
-  }
-
   render() {
 
     return (
-      <form className="login-form" onSubmit={this.hendleSubmit} ref={this.setRef}>
+      <form className="login-form" ref={this.setRef} onSubmit={this.hendleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">Name</label>
