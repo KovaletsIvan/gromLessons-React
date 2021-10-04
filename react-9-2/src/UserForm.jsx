@@ -6,7 +6,7 @@ class UserForm extends React.Component {
     super(props)
     this.state = {
       name: '',
-      student: '',
+      student: false,
       occupation: 'london',
       about: ''
     }
@@ -20,7 +20,6 @@ class UserForm extends React.Component {
       [name]: val
     })
   }
-
 
   render() {
 
