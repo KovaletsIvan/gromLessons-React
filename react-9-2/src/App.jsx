@@ -7,8 +7,7 @@ class App extends React.Component {
     super(props)
   }
 
-  createUser = (e,obj) => {
-    e.preventDefault()
+  createUser = (obj) => {
     console.log(obj)
   }
 
