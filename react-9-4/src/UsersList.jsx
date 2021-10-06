@@ -1,7 +1,7 @@
 
 import React from 'react';
 import User from './User';
-// import Filter from './Filter';
+import Filter from './Filter';
 
 class UsersList extends React.Component {
   constructor(props) {
@@ -33,12 +33,11 @@ class UsersList extends React.Component {
 
     return (
       <div>
-        <div className="filter">
-          <span className="filter__count">{count}</span>
-          <input type="text" className="filter__input"
-            onChange={this.handleFilterText}
-            value={this.state.filterText} />
-        </div>
+        <Filter
+          filterText={this.state.filterText}
+          count={count}
+          onChange={this.handleFilterText}
+        />
         {result
           .map(elem => <User
             key={elem.id}
