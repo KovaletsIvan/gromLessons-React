@@ -8,13 +8,13 @@ const UserForm = (props) => {
       <input type="text"
         name="firstName"
         className="user-form__input"
-        value={props.firsName}
+        value={props.userData.firstName}
         onChange={props.onChange}
       />
       <input type="text"
         name="lastName"
         className="user-form__input"
-        value={props.lastName}
+        value={props.userData.lastName}
         onChange={props.onChange}
       />
     </form>
