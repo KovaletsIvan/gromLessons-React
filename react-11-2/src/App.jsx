@@ -22,12 +22,12 @@ class App extends React.Component {
   }
 
   render() {
-
+    const text ='Use immutable array methods to work with data. It will help to avoid bugs'
     return (
       <div className="app">
         <button className="btn" onClick={this.showDialog}>Show dialog</button>
-        <Dialog isOpen={this.state.isOpen} title='some title' onClose={this.hideDialog}>
-          <p>Some Text</p>
+        <Dialog isOpen={this.state.isOpen} title='Recommendation' onClose={this.hideDialog}>
+          <p>{text}</p>
         </Dialog>
       </div>
     )
