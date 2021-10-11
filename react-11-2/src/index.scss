@@ -47,11 +47,6 @@ body {
     white-space: nowrap;
   }
 
-  &__content{
-    display: flex;
-    justify-content: center;
-  }
-
   &__close-btn {
     transform: rotate(45deg);
     background-color: transparent;

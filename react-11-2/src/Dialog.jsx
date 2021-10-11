@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 
 const Dialog = ({ isOpen, children, title, onClose }) => {
   if (!isOpen) {
@@ -16,6 +17,18 @@ const Dialog = ({ isOpen, children, title, onClose }) => {
     </div>
 
   )
+}
+
+Dialog.PropTypes = {
+  isOpen: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+  onClose: PropTypes.func.isRequired
+}
+
+Dialog.defaultProps = {
+  isOpen: false,
+  title: ''
 }
 
 
