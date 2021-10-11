@@ -29,6 +29,7 @@ class App extends React.Component {
         <Numbers title={"All numbers"} number={this.state.number} />
         <EvenNumbers title={"Evan number"} number={this.state.number}/>
         <OddNumbers title={"Evan number"} number={this.state.number} />
+        <Numbers title={"Just 17"} number={17} />
       </div>
     )
   }
