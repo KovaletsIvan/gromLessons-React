@@ -4,7 +4,7 @@ import React from "react";
 const Expand = ({ children, isVisible, title, onClick }) => {
   const visibility = isVisible ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>
   return (
-    <div className="app">
+    
 
       <div className="expand border">
         <div className="expand__header">
@@ -13,11 +13,9 @@ const Expand = ({ children, isVisible, title, onClick }) => {
             {visibility}
           </button>
         </div>
-
         {children}
-
       </div>
-    </div>
+    
 
   )
 }
