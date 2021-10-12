@@ -12,18 +12,18 @@ const Expand = ({ children, isVisible, title, onClick }) => {
     </div> :
     null
   return (
-    <div className="app">
 
-      <div className="expand border">
-        <div className="expand__header">
-          <span className="expand__title">{title}</span>
-          <button className="expand__toggle-btn" onClick={onClick}>
-            {visibility}
-          </button>
-        </div>
-        {content}
+
+    <div className="expand border">
+      <div className="expand__header">
+        <span className="expand__title">{title}</span>
+        <button className="expand__toggle-btn" onClick={onClick}>
+          {visibility}
+        </button>
       </div>
+      {content}
     </div>
+
 
   )
 }
