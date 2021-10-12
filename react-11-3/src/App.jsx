@@ -29,11 +29,10 @@ class App extends React.Component {
 
     return (
       <div className="app">
-
-        <Expand isVisible={this.state.isVisible} title="Some title" onClick={this.hendelClick}>
+        <div className="expand border">
+          <Expand isVisible={this.state.isVisible} title="Some title" onClick={this.hendelClick} />
           {context}
-        </Expand>
-
+        </div>
       </div>
     )
   }
