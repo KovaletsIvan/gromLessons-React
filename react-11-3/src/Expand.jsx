@@ -3,8 +3,6 @@ import React from "react";
 
 const Expand = ({ children, isVisible, title, onClick }) => {
 
-
-
   return (
 
     <div className="expand border">
