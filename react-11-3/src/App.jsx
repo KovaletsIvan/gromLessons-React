@@ -18,22 +18,23 @@ class App extends React.Component {
   }
 
   render() {
-    const context = this.state.isVisible ?
+    const content = this.state.isVisible ?
       <p>
         Hooks are a new addition in React 16.8. They let you use state and other React features
         without writing a class.
       </p>
-
       : null
 
     return (
       <div className="app">
-        <div className="expand border">
-          <Expand isVisible={this.state.isVisible} title="Some title" onClick={this.hendelClick} />
-          <div className="expand__content">
-            {context}
-          </div>
-        </div>
+        <Expand
+          isVisible={this.state.isVisible}
+          title="Some title"
+          onClick={this.hendelClick}
+        >
+          {content}
+        </Expand>
+
       </div>
     )
   }
