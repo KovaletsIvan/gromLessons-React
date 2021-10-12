@@ -13,9 +13,9 @@ const Expand = ({ children, isVisible, title, onClick }) => {
             {visibility}
           </button>
         </div>
-        <div className="expand__content">
-          {children}
-        </div>
+
+        {children}
+
       </div>
     </div>
 
