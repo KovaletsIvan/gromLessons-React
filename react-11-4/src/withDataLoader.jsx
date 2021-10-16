@@ -1,14 +1,15 @@
 import React from 'react';
+import Spinner from './Sppiner';
 
 export const withDataLoader = (WrapedComponent) => {
   class WithDataLoader extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
-        data: null
+        data: null,
       }
     }
-    componentDidCatch() {
+    componentDidMount() {
       this.getData(this.props.url)
     }
     getData = (url) => {
@@ -22,9 +23,10 @@ export const withDataLoader = (WrapedComponent) => {
     }
 
     render() {
-      // if(!this.state.data){
-      //   return null
-      // }
+
+      if(!this.state.data){
+        return <Spinner/>
+      }
       return <WrapedComponent data={this.state.data} />
     }
   }
