@@ -15,5 +15,3 @@ const App = () => (
 );
 
 export default App;
-// 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/cities/1'
-// ('https://api.github.com/users/octocat')
