@@ -7,7 +7,7 @@ const Product = ({ match }) => {
   return (
 
     <div className="product">
-       ${match.params.productId}`
+      {`Product is a ${match.params.productId}`}
     </div>
 
   )
