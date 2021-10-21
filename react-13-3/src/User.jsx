@@ -5,7 +5,6 @@ class User extends React.Component {
     super(props);
     this.state = {
       data: {},
-      userid: this.props.match.params.userId,
     };
   }
   componentDidMount() {
