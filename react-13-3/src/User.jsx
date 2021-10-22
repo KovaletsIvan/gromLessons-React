@@ -28,7 +28,7 @@ class User extends React.Component {
 
     const { name, location, avatar_url } = this.state.data;
     return (
-      <div div className="user">
+      <div className="user">
         <img alt="User Avatar" src={avatar_url} className="user__avatar" />
         <div className="user__info">
           <span className="user__name">{name}</span>
