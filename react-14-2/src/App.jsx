@@ -20,8 +20,10 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <span>Select a user please</span>
-              </Route>
-            <Route path="/users/:userId" component={User} />
+            </Route>
+            <Route path="/users/:userId" >
+              <User />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>
