@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-const User = () => {
+const User = ({ match }) => {
   const [userData, setUserData] = useState(null)
-  const { userId } = useParams()
+  // const { userId } = match
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${userId}`)
+    fetch(`https://api.github.com/users/${match.params.userId}`)
       .then(resp => {
         if (resp.ok) {
           return resp.json()
@@ -16,12 +15,12 @@ const User = () => {
       .then(userData => {
         setUserData(userData)
       })
-  }, [userId])
+  })
   if (!userData) {
     return null
   }
   const { name, avatar_url, location } = userData
-
+  
   return (
     <div className="user">
       <img alt="User Avatar" src={avatar_url} className="user__avatar" />
