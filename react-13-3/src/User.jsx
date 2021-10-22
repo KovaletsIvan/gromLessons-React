@@ -4,7 +4,7 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
+      data: null,
     };
   }
   componentDidMount() {
@@ -25,7 +25,9 @@ class User extends React.Component {
       });
   };
   render() {
-
+    if (!this.state.data) {
+      return null
+    }
     const { name, location, avatar_url } = this.state.data;
     return (
       <div className="user">
