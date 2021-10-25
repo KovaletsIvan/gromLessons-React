@@ -5,11 +5,13 @@ const ConnectionStatus = () => {
 
   useEffect(() => {
     window.addEventListener('offline', () => setStatus('offline'))
-    window.addEventListener('online', () => setStatus('online'))
-    return () => window.removeEventListener()
-
+    return () => window.removeEventListener('offline', () => setStatus('offline'))
   }, [])
 
+  useEffect(() => {
+    window.addEventListener('online', () => setStatus('online'))
+    return () => window.removeEventListener('online', () => setStatus('online'))
+  })
   const statusClass = status === 'online' ? "status " : "status status_offline"
 
   return (
