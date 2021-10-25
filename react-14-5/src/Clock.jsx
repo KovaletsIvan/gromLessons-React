@@ -15,9 +15,9 @@ const Clock = ({ location, offset }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(timeFormat(new Date(getTimeWithOffset(offset))))
-      return () => clearInterval(interval)
     }, 1000)
-  }, [])
+    return () => clearInterval(interval)
+  }, [offset])
 
 
 
