@@ -37,7 +37,7 @@ class App extends Component {
     const { weekStartDate } = this.state;
     const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
     const numberOfMounth = this.state.weekStartDate.getMonth()
-    
+
     return (
       <>
         <Header

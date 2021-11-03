@@ -23,10 +23,9 @@ class Modal extends Component {
       .reduce((obj, [field, value]) => ({ ...obj, [field]: value }), {})
 
     fetchData(formData)
-    
-
     this.props.togleVisibility()
   }
+
   render() {
 
     return (
@@ -35,7 +34,7 @@ class Modal extends Component {
           <div className="create-event">
             <button className="create-event__close-btn"
               onClick={this.props.togleVisibility}>+</button>
-            <form className="event-form">
+            <form className="event-form" onSubmit={this.onSubmit}>
               <input
                 type="text"
                 name="title"
@@ -69,7 +68,6 @@ class Modal extends Component {
               ></textarea>
               <button type="submit"
                 className="event-form__submit-btn"
-                onClick={this.onSubmit}
               >
                 Create
               </button>

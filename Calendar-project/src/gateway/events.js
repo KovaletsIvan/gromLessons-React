@@ -48,3 +48,17 @@ export const fetchData = (event) => {
   });
 };
 
+// export const getData = () => {
+//   fetch(baseUrl)
+//     .then((resp) => resp.json())
+//     .then((result) => {
+//       result.map((elem) => {
+//         (elem.dateFrom = new Date(elem.dateFrom)),
+//           (elem.dateTo = new Date(elem.dateTo));
+//       });
+//       return result;
+//     })
+//     .then((res) => {
+//       this.setState({ events: res });
+//     });
+// };

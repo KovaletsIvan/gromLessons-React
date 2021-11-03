@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-
 import Navigation from "./../navigation/Navigation";
 import Week from "../week/Week";
 import Sidebar from "../sidebar/Sidebar";
 import { baseUrl } from "../../gateway/events";
 
+
 import "./calendar.scss";
 
 class Calendar extends Component {
   state = {
-    events: []
+    events: [],
   };
   componentDidMount() {
     this.getData()
   }
-  // componentDidUpdate(prevState) {
- 
-  // }
+
+
   getData = () => {
     fetch(baseUrl)
       .then((resp) => resp.json())
@@ -32,9 +31,9 @@ class Calendar extends Component {
       });
   };
 
-
   render() {
     console.log(this.state.events)
+
     const { weekDates } = this.props;
 
     return (
@@ -52,17 +51,3 @@ class Calendar extends Component {
 }
 
 export default Calendar;
-
-  // getData = () => {
-  //   fetch(baseUrl)
-  //     .then((resp) => resp.json())
-  //     .then((result) => {
-  //       result.map((elem) => {
-  //         (elem.dateFrom = new Date(elem.dateFrom)),
-  //           (elem.dateTo = new Date(elem.dateTo));
-  //         this.setState({
-  //           events: result
-  //         })
-  //       });
-  //     })
-  // };
