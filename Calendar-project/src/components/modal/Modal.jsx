@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { fetchData } from "../../gateway/events";
 import "./modal.scss";
 
-
-
 class Modal extends Component {
   constructor(props) {
     super(props)
@@ -20,10 +18,14 @@ class Modal extends Component {
       }
     })
   }
+
+
   onSubmit = (e) => {
+    
     e.preventDefault();
     fetchData(this.state.event)
     this.props.togleVisibility()
+    this.props.getData()
   }
 
   render() {

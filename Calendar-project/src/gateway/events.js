@@ -13,7 +13,7 @@ export const fetchData = (event) => {
     body: JSON.stringify(event),
   }).then((response) => {
     if (!response.ok) {
-      throw new Error('Failed to create task');
+      throw new Error('Failed to create event');
     }
   });
 };
