@@ -8,26 +8,26 @@ class Modal extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`
+      event: {}
     }
   }
 
   handleChange = (e) => {
     this.setState({
-      date: e.target.value
+      event: {
+        ...this.state.event,
+        [e.target.name]: e.target.value
+      }
     })
   }
   onSubmit = (e) => {
     e.preventDefault();
-    const formData = [...new FormData(document.querySelector('.event-form'))]
-      .reduce((obj, [field, value]) => ({ ...obj, [field]: value }), {})
-
-    fetchData(formData)
+    fetchData(this.state.event)
     this.props.togleVisibility()
   }
 
   render() {
-
+    console.log(this.state.event)
     return (
       <div className="modal overlay">
         <div className="modal__content">
@@ -40,18 +40,19 @@ class Modal extends Component {
                 name="title"
                 placeholder="Title"
                 className="event-form__field"
+                onChange={this.handleChange}
               />
               <div className="event-form__time">
                 <input
                   type="date"
                   name="date"
                   className="event-form__field"
-                  value={this.state.date}
                   onChange={this.handleChange} />
                 <input
                   type="time"
                   name="dateFrom"
                   className="event-form__field"
+
                   onChange={this.handleChange}
                 />
                 <span>-</span>
@@ -59,12 +60,15 @@ class Modal extends Component {
                   type="time"
                   name="dateTo"
                   className="event-form__field"
+
+                  onChange={this.handleChange}
                 />
               </div>
               <textarea
                 name="description"
                 placeholder="Description"
                 className="event-form__field"
+                onChange={this.handleChange}
               ></textarea>
               <button type="submit"
                 className="event-form__submit-btn"
@@ -80,3 +84,7 @@ class Modal extends Component {
 }
 
 export default Modal;
+
+// const formData = [...new FormData(document.querySelector('.event-form'))]
+// .reduce((obj, [field, value]) => ({ ...obj, [field]: value }), {})
+// date: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() > 10 ? new Date().getDate() : `0${new Date().getDate()}`}`,
