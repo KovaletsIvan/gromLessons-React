@@ -15,10 +15,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.getData()
+    this.getEventData()
   }
 
-  getData = () => {
+  getEventData = () => {
     fetch(baseUrl)
       .then((resp) => resp.json())
       .then((result) => {
@@ -53,14 +53,14 @@ class App extends Component {
     this.setState({
       modalVisibility: !this.state.modalVisibility
     })
-    this.getData()
+    this.getEventData()
   }
 
   render() {
     const { weekStartDate } = this.state;
     const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
     const numberOfMounth = this.state.weekStartDate.getMonth()
-    console.log(this.state.events)
+
     return (
       <>
         <Header
@@ -73,10 +73,11 @@ class App extends Component {
         />
         <Calendar weekDates={weekDates}
           events={this.state.events}
+          getEventData={this.getEventData}
         />
         {this.state.modalVisibility ?
           <Modal togleVisibility={this.togleVisibility}
-            getData={this.getData} />
+            getEventData={this.getEventData} />
           : null}
       </>
     );

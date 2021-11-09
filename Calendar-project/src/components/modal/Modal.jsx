@@ -21,15 +21,15 @@ class Modal extends Component {
 
 
   onSubmit = (e) => {
-    
+
     e.preventDefault();
     fetchData(this.state.event)
     this.props.togleVisibility()
-    this.props.getData()
+    this.props.getEventData()
   }
 
   render() {
-    console.log(this.state.event)
+ 
     return (
       <div className="modal overlay">
         <div className="modal__content">

@@ -18,3 +18,12 @@ export const fetchData = (event) => {
   });
 };
 
+export const removeEvent = (id) => {
+  fetch(`${baseUrl}/${id}`, {
+    method: 'DELETE',
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(`Failed to delete event ${id}`);
+    }
+  });
+};

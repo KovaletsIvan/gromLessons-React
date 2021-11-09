@@ -24,4 +24,21 @@
 .delete-event-btn {
   cursor: pointer;
   border: none;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+  left: 140px;
+  width: 80%;
+  height: 40px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+.btn{
+  display: none;
+}
+
+.fa-trash {
+  margin-right: 20px;
 }
