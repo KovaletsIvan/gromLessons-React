@@ -1,5 +1,6 @@
 import { getDateTime } from '../utils/dateUtils.js';
 
+
 export const baseUrl = 'https://617e67ce2ff7e600174bd7b8.mockapi.io/events';
 
 export const fetchData = (event) => {
@@ -27,3 +28,4 @@ export const removeEvent = (id) => {
     }
   });
 };
+
