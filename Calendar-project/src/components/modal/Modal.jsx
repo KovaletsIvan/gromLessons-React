@@ -41,7 +41,7 @@ class Modal extends Component {
                 type="text"
                 name="title"
                 placeholder="Title"
-                className="event-form__field"
+                className="title event-form__field"
                 onChange={this.handleChange}
               />
               <div className="event-form__time">

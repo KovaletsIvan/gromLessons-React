@@ -49,6 +49,7 @@
   &__field {
     margin: 8px;
     border: none;
+    outline: none;
   }
 
   &__submit-btn {
@@ -61,4 +62,7 @@
     padding: 8px 16px;
     border-radius: 8px;
   }
+}
+.title {
+  border-bottom: 2px solid cornflowerblue;
 }
