@@ -81,8 +81,20 @@
 }
 
 .red-line {
+  margin: 0;
+  padding: 0;
+  display: block;
   position: absolute;
   width: 100%;
-  border-top: 2px solid red;
+  border-bottom: 2px solid red;
   z-index: 5;
+}
+
+.fa-circle {
+  float: right;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  color: red;
+  top: -7px;
 }
