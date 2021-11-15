@@ -3,7 +3,7 @@ import Day from "../day/Day";
 
 import "./week.scss";
 
-const Week = ({ weekDates, events, showElem, removeEvents, getEventData, redline }) => {
+const Week = ({ weekDates, events, showElem, removeEvents, getEventData, redline, togleVisibility }) => {
 
 
   return (
@@ -26,6 +26,7 @@ const Week = ({ weekDates, events, showElem, removeEvents, getEventData, redline
             removeEvents={removeEvents}
             getEventData={getEventData}
             redline={redline}
+            togleVisibility={togleVisibility}
           />
         );
       })}

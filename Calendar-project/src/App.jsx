@@ -49,12 +49,14 @@ class App extends Component {
       weekStartDate: new Date()
     })
   }
+
   togleVisibility = () => {
     this.setState({
       modalVisibility: !this.state.modalVisibility
     })
     this.getEventData()
   }
+
 
   render() {
     const { weekStartDate } = this.state;
@@ -74,6 +76,8 @@ class App extends Component {
         <Calendar weekDates={weekDates}
           events={this.state.events}
           getEventData={this.getEventData}
+          togleVisibility={this.togleVisibility}
+
         />
         {this.state.modalVisibility ?
           <Modal togleVisibility={this.togleVisibility}

@@ -6,7 +6,9 @@ class Modal extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      event: {}
+      event: {
+        date: `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() > 10 ? new Date().getDate() : `0${new Date().getDate()}`}`,
+      }
     }
   }
 
@@ -20,8 +22,8 @@ class Modal extends Component {
   }
 
 
-  onSubmit = (e) => {
 
+  onSubmit = (e) => {
     e.preventDefault();
     fetchData(this.state.event)
     this.props.togleVisibility()
@@ -29,7 +31,7 @@ class Modal extends Component {
   }
 
   render() {
- 
+
     return (
       <div className="modal overlay">
         <div className="modal__content">
@@ -49,12 +51,12 @@ class Modal extends Component {
                   type="date"
                   name="date"
                   className="event-form__field"
+                  value={this.state.event.date}
                   onChange={this.handleChange} />
                 <input
                   type="time"
                   name="dateFrom"
                   className="event-form__field"
-
                   onChange={this.handleChange}
                 />
                 <span>-</span>
@@ -62,7 +64,6 @@ class Modal extends Component {
                   type="time"
                   name="dateTo"
                   className="event-form__field"
-
                   onChange={this.handleChange}
                 />
               </div>

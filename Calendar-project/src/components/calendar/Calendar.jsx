@@ -56,10 +56,10 @@ class Calendar extends Component {
             <Week
               weekDates={weekDates}
               events={this.props.events}
-              showElem={this.showElem}
               removeEvents={this.removeEvents}
               getEventData={this.props.getEventData}
               redline={spanElem}
+              togleVisibility={this.props.togleVisibility}
             />
           </div>
         </div>

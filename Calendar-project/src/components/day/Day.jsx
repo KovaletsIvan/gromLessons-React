@@ -4,7 +4,7 @@ import "./day.scss";
 
 
 
-const Day = ({ dataDay, dayEvents, showElem, removeEvents, getEventData, redline }) => {
+const Day = ({ dataDay, dayEvents, removeEvents, getEventData, redline, togleVisibility }) => {
 
 
   const hours = Array(24)
@@ -27,9 +27,9 @@ const Day = ({ dataDay, dayEvents, showElem, removeEvents, getEventData, redline
             key={dataDay + hour}
             dataHour={hour}
             hourEvents={hourEvents}
-            showElem={showElem}
             removeEvents={removeEvents}
             getEventData={getEventData}
+            // togleVisibility={togleVisibility}
           />
         );
       })}
