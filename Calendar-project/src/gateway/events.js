@@ -35,3 +35,54 @@ export const removeEvent = (id) => {
     }
   });
 };
+
+export const compareEvent = (event) => {
+  if (
+    getDateTime(event.date, event.dateTo).getHours() -
+      getDateTime(event.date, event.dateFrom).getHours() >
+    6
+  ) {
+    return;
+  }
+  fetch(baseUrl)
+    .then((response) => response.json())
+    .then((json) => {
+      const result = json.filter(
+        (elem) =>
+          (new Date(elem.date).getDate() === new Date(event.date).getDate() &&
+            new Date(elem.dateFrom).getHours()) ===
+            getDateTime(event.date, event.dateFrom).getHours() ||
+          new Date(elem.dateTo).getHours() ===
+            getDateTime(event.date, event.dateFrom).getHours() ||
+          new Date(elem.dateTo).getHours() ===
+            getDateTime(event.date, event.dateTo).getHours()
+      );
+      return result;
+    })
+    .then((res) => {
+      if (res.length > 0) {
+        console.log('incorrect time event', res);
+        return;
+      }
+      fetchData(event);
+    });
+};
+
+// export const removeEvent = (id) => {
+//   fetch(`${baseUrl}/${id}`)
+//     .then((resp) => resp.json())
+//     .then((json) => {
+//       const result =
+//         new Date(json.dateFrom).getHours() * 60 +
+//         new Date(json.dateFrom).getMinutes() -
+//         new Date().getHours() * 60 +
+//         new Date().getMinutes();
+//       return Math.abs(result) > 15;
+//     })
+//     .then((res) => {
+//       if (!res) {
+//         return;
+//       }
+//       remove(id);
+//     });
+// };

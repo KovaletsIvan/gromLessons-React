@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { fetchData } from "../../gateway/events";
+import { compareEvent } from "../../gateway/events";
 import "./modal.scss";
 
 class Modal extends Component {
@@ -25,9 +25,10 @@ class Modal extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    fetchData(this.state.event)
+    compareEvent(this.state.event)
     this.props.togleVisibility()
     this.props.getEventData()
+
   }
 
   render() {
